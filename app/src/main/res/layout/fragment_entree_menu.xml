@@ -54,7 +54,7 @@
                 <!-- TODO: set the entree in the view model when the RadioButton is clicked -->
                 <RadioButton
                     android:id="@+id/cauliflower"
-                    android:onClick="@{viewModel.entree"
+                    android:onClick="@{() -> viewModel.setEntree(cauliflower)}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
@@ -85,6 +85,7 @@
                 <!-- TODO: set the entree in the view model when the RadioButton is clicked -->
                 <RadioButton
                     android:id="@+id/chili"
+                    android:onClick="@{() -> viewModel.setEntree(chili)}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
@@ -115,6 +116,7 @@
                 <!-- TODO: set the entree in the view model when the RadioButton is clicked -->
                 <RadioButton
                     android:id="@+id/pasta"
+                    android:onClick="@{() -> viewModel.setEntree(pasta)}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
@@ -145,6 +147,7 @@
                 <!-- TODO: set the entree in the view model when the RadioButton is clicked -->
                 <RadioButton
                     android:id="@+id/skillet"
+                    android:onClick="@{() -> viewModel.setEntree(skillet)}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
@@ -182,11 +185,12 @@
                 style="@style/Widget.LunchTray.TextView.Subtotal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider"
-                tools:text="Subtotal $5.00"/>
+                tools:text="@{@string/subtotal(viewModel.subtotal)}"/>
 
             <!-- TODO: cancel the order when clicked -->
             <Button
                 android:id="@+id/cancel_button"
+                android:onClick="@{() -> entreeMenuFragment.cancelOrder()}"
                 style="@style/Widget.Order.Button.Cancel"
                 app:layout_constraintEnd_toStartOf="@id/next_button"
                 app:layout_constraintStart_toStartOf="parent"
@@ -195,6 +199,7 @@
             <!-- TODO: go to the next screen when clicked -->
             <Button
                 android:id="@+id/next_button"
+                android:onClick="@{() -> entreeMenuFragment.goToNextScreen()}"
                 style="@style/Widget.Order.Button.Next"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

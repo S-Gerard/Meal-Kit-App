@@ -21,6 +21,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.example.lunchtray.R
 import com.example.lunchtray.databinding.FragmentEntreeMenuBinding
 import com.example.lunchtray.model.OrderViewModel
 
@@ -73,8 +75,8 @@ class EntreeMenuFragment : Fragment() {
      * Cancel the order and start over.
      */
     fun cancelOrder() {
-        // TODO: Reset order in view model
-        // TODO: Navigate back to the [StartFragment] to start over
+        sharedViewModel.resetOrder()
+        findNavController().navigate(R.id.action_entreeMenuFragment_to_startOrderFragment)
     }
 
     /**
