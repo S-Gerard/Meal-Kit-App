@@ -69,7 +69,7 @@ class AccompanimentMenuFragment : Fragment() {
      * Navigate to the checkout fragment.
      */
     fun goToNextScreen() {
-        // TODO: Navigate to the CheckoutFragment
+        findNavController().navigate(R.id.action_accompanimentMenuFragment_to_checkoutFragment)
     }
 
     /**

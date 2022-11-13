@@ -68,7 +68,7 @@ class SideMenuFragment : Fragment() {
      * Navigate to the accompaniments menu fragment
      */
     fun goToNextScreen() {
-        // TODO: Navigate to the AccompanimentMenuFragment
+        findNavController().navigate(R.id.action_sideMenuFragment_to_accompanimentMenuFragment)
     }
 
     /**

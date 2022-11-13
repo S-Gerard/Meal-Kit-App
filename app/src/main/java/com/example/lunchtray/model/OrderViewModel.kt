@@ -98,7 +98,7 @@ class OrderViewModel : ViewModel() {
         // TODO: set the current side value to the menu item corresponding to the passed in string
         _side.value = menuItems.getValue(side)
         // TODO: update the subtotal to reflect the price of the selected side.
-        updateSubtotal(_entree.value!!.price)
+        updateSubtotal(_side.value!!.price)
     }
 
     /**
