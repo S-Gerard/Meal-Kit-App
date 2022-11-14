@@ -33,7 +33,7 @@
     <fragment
         android:id="@+id/mealQuantityFragment"
         android:name="com.example.lunchtray.ui.order.MealQuantityFragment"
-        android:label="@string/title_entree_menu"
+        android:label="@string/title_meal_quantity"
         tools:layout="@layout/fragment_meal_quantity" >
         <action
             android:id="@+id/action_entreeMenuFragment_to_sideMenuFragment"
@@ -45,7 +45,7 @@
     <fragment
         android:id="@+id/mealTypeFragment"
         android:name="com.example.lunchtray.ui.order.MealTypeFragment"
-        android:label="@string/title_side_menu"
+        android:label="@string/title_meal_type"
         tools:layout="@layout/fragment_meal_type" >
         <action
             android:id="@+id/action_sideMenuFragment_to_accompanimentMenuFragment"
@@ -57,7 +57,7 @@
     <fragment
         android:id="@+id/subscriptionFragment"
         android:name="com.example.lunchtray.ui.order.SubscriptionFragment"
-        android:label="@string/title_accompaniment_menu"
+        android:label="@string/title_subscription"
         tools:layout="@layout/fragment_subscription" >
         <action
             android:id="@+id/action_accompanimentMenuFragment_to_checkoutFragment"

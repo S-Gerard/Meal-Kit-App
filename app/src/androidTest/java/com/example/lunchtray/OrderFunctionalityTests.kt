@@ -79,7 +79,7 @@ class OrderFunctionalityTests : BaseTest() {
         launchFragmentInContainer<MealTypeFragment>(themeResId = R.style.Theme_LunchTray)
 
         // Select the salad item
-        onView(withId(R.id.salad)).perform(click())
+        onView(withId(R.id.meat)).perform(click())
         onView(withId(R.id.subtotal))
             .check(matches(withText(containsString("Subtotal: $2.50"))))
 
@@ -142,7 +142,7 @@ class OrderFunctionalityTests : BaseTest() {
         // Move to next fragment
         onView(withId(R.id.next_button)).perform(click())
         // Select side item
-        onView(withId(R.id.salad)).perform(click())
+        onView(withId(R.id.meat)).perform(click())
         // Check that subtotal has updated
         onView(withId(R.id.subtotal))
             .check(matches(withText(containsString("Subtotal: $9.50"))))

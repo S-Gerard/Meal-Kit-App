@@ -90,11 +90,11 @@ class MenuContentTests : BaseTest() {
         launchFragmentInContainer<MealTypeFragment>(themeResId = R.style.Theme_LunchTray)
 
         // Check the salad item
-        onView(withId(R.id.salad))
+        onView(withId(R.id.meat))
             .check(matches(withText(containsString("Summer Salad"))))
         onView(withId(R.id.salad_description))
             .check(matches(withText(containsString("Heirloom tomatoes"))))
-        onView(withId(R.id.salad_price))
+        onView(withId(R.id.meat_price))
             .check(matches(withText(containsString("$2.50"))))
 
         // Check the soup item

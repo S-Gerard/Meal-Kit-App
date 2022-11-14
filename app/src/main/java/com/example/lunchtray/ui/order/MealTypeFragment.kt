@@ -23,7 +23,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.lunchtray.R
-import com.example.lunchtray.databinding.FragmentSideMenuBinding
+import com.example.lunchtray.databinding.FragmentMealTypeBinding
 import com.example.lunchtray.model.OrderViewModel
 
 /**
@@ -34,7 +34,7 @@ class MealTypeFragment : Fragment() {
     // Binding object instance corresponding to the fragment_start_order.xml layout
     // This property is non-null between the onCreateView() and onDestroyView() lifecycle callbacks,
     // when the view hierarchy is attached to the fragment.
-    private var _binding: FragmentSideMenuBinding? = null
+    private var _binding: FragmentMealTypeBinding? = null
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -49,7 +49,7 @@ class MealTypeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSideMenuBinding.inflate(inflater, container, false)
+        _binding = FragmentMealTypeBinding.inflate(inflater, container, false)
         val root = binding.root
         return root
     }
@@ -60,7 +60,7 @@ class MealTypeFragment : Fragment() {
         binding?.apply {
             lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
-            sideMenuFragment = this@MealTypeFragment
+            mealTypeFragment = this@MealTypeFragment
         }
     }
 
