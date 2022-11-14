@@ -22,9 +22,9 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.MediumTest
-import com.example.lunchtray.ui.order.AccompanimentMenuFragment
-import com.example.lunchtray.ui.order.EntreeMenuFragment
-import com.example.lunchtray.ui.order.SideMenuFragment
+import com.example.lunchtray.ui.order.SubscriptionFragment
+import com.example.lunchtray.ui.order.MealQuantityFragment
+import com.example.lunchtray.ui.order.MealTypeFragment
 import org.hamcrest.CoreMatchers.containsString
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -34,7 +34,7 @@ import org.junit.runner.RunWith
 class MenuContentTests : BaseTest() {
 
     /**
-     * Test the menu content of the entire [EntreeMenuFragment]
+     * Test the menu content of the entire [MealQuantityFragment]
      *
      * It isn't necessarily best practice to make all these assertions in a single test,
      * however, it is done here for improved readability of the file.
@@ -42,14 +42,14 @@ class MenuContentTests : BaseTest() {
     @Test
     fun `entree_menu_item_content`() {
         // launch the entree menu fragment
-        launchFragmentInContainer<EntreeMenuFragment>(themeResId = R.style.Theme_LunchTray)
+        launchFragmentInContainer<MealQuantityFragment>(themeResId = R.style.Theme_LunchTray)
 
         // Check the cauliflower item
-        onView(withId(R.id.cauliflower))
+        onView(withId(R.id.three_meals))
             .check(matches(withText(containsString("Cauliflower"))))
         onView(withId(R.id.cauliflower_description))
             .check(matches(withText(containsString("Whole cauliflower"))))
-        onView(withId(R.id.cauliflower_price))
+        onView(withId(R.id.one_meal_price))
             .check(matches(withText(containsString("$7.00"))))
 
         // Check the chili item
@@ -78,7 +78,7 @@ class MenuContentTests : BaseTest() {
     }
 
     /**
-     * Test the menu content of the entire [SideMenuFragment]
+     * Test the menu content of the entire [MealTypeFragment]
      *
      * It isn't necessarily best practice to make all these assertions in a single test,
      * however, it is done here for improved readability of the file by reducing the number of
@@ -87,7 +87,7 @@ class MenuContentTests : BaseTest() {
     @Test
     fun `side_menu_item_content`() {
         // launch the side menu fragment
-        launchFragmentInContainer<SideMenuFragment>(themeResId = R.style.Theme_LunchTray)
+        launchFragmentInContainer<MealTypeFragment>(themeResId = R.style.Theme_LunchTray)
 
         // Check the salad item
         onView(withId(R.id.salad))
@@ -123,7 +123,7 @@ class MenuContentTests : BaseTest() {
     }
 
     /**
-     * Test the menu content of the entire [AccompanimentMenuFragment]
+     * Test the menu content of the entire [SubscriptionFragment]
      *
      * It isn't necessarily best practice to make all these assertions in a single test,
      * however, it is done here for improved readability of the file by reducing the number of
@@ -132,7 +132,7 @@ class MenuContentTests : BaseTest() {
     @Test
     fun `accompaniment_menu_item_content`() {
         // launch the accompaniment menu fragment
-        launchFragmentInContainer<AccompanimentMenuFragment>(themeResId = R.style.Theme_LunchTray)
+        launchFragmentInContainer<SubscriptionFragment>(themeResId = R.style.Theme_LunchTray)
 
         // Check the bread item
         onView(withId(R.id.bread))

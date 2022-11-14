@@ -23,10 +23,10 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
-import com.example.lunchtray.ui.order.AccompanimentMenuFragment
+import com.example.lunchtray.ui.order.SubscriptionFragment
 import com.example.lunchtray.ui.order.CheckoutFragment
-import com.example.lunchtray.ui.order.EntreeMenuFragment
-import com.example.lunchtray.ui.order.SideMenuFragment
+import com.example.lunchtray.ui.order.MealQuantityFragment
+import com.example.lunchtray.ui.order.MealTypeFragment
 import org.hamcrest.core.StringContains.containsString
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -36,7 +36,7 @@ import org.junit.runner.RunWith
 class OrderFunctionalityTests : BaseTest() {
 
     /**
-     * Test subtotal in [EntreeMenuFragment]
+     * Test subtotal in [MealQuantityFragment]
      *
      * It isn't necessarily best practice to make all these assertions in a single test,
      * however, it is done here for improved readability of the file.
@@ -44,10 +44,10 @@ class OrderFunctionalityTests : BaseTest() {
     @Test
     fun `radio_buttons_update_entree_menu_subtotal`() {
         // Launch the entree menu fragment
-        launchFragmentInContainer<EntreeMenuFragment>(themeResId = R.style.Theme_LunchTray)
+        launchFragmentInContainer<MealQuantityFragment>(themeResId = R.style.Theme_LunchTray)
 
         // Select the cauliflower item
-        onView(withId(R.id.cauliflower)).perform(click())
+        onView(withId(R.id.three_meals)).perform(click())
         onView(withId(R.id.subtotal))
             .check(matches(withText(containsString("Subtotal: $7.00"))))
 
@@ -68,7 +68,7 @@ class OrderFunctionalityTests : BaseTest() {
     }
 
     /**
-     * Test subtotal in [SideMenuFragment]
+     * Test subtotal in [MealTypeFragment]
      *
      * It isn't necessarily best practice to make all these assertions in a single test,
      * however, it is done here for improved readability of the file.
@@ -76,7 +76,7 @@ class OrderFunctionalityTests : BaseTest() {
     @Test
     fun `radio_buttons_update_side_menu_subtotal`() {
         // Launch the side menu fragment
-        launchFragmentInContainer<SideMenuFragment>(themeResId = R.style.Theme_LunchTray)
+        launchFragmentInContainer<MealTypeFragment>(themeResId = R.style.Theme_LunchTray)
 
         // Select the salad item
         onView(withId(R.id.salad)).perform(click())
@@ -100,7 +100,7 @@ class OrderFunctionalityTests : BaseTest() {
     }
 
     /**
-     * Test subtotal in [AccompanimentMenuFragment]
+     * Test subtotal in [SubscriptionFragment]
      *
      * It isn't necessarily best practice to make all these assertions in a single test,
      * however, it is done here for improved readability of the file.
@@ -108,7 +108,7 @@ class OrderFunctionalityTests : BaseTest() {
     @Test
     fun `radio_buttons_update_accompaniment_menu_subtotal`() {
         // Launch the side menu fragment
-        launchFragmentInContainer<AccompanimentMenuFragment>(themeResId = R.style.Theme_LunchTray)
+        launchFragmentInContainer<SubscriptionFragment>(themeResId = R.style.Theme_LunchTray)
 
         // Select the salad item
         onView(withId(R.id.bread)).perform(click())
@@ -136,7 +136,7 @@ class OrderFunctionalityTests : BaseTest() {
         // Start order
         onView(withId(R.id.start_order_btn)).perform(click())
         // Select entree item
-        onView(withId(R.id.cauliflower)).perform(click())
+        onView(withId(R.id.three_meals)).perform(click())
         // We already have a test for a single menu item selection, so we don't need to check the
         // subtotal here.
         // Move to next fragment
@@ -180,7 +180,7 @@ class OrderFunctionalityTests : BaseTest() {
     }
 
     /**
-     * Test that the order is reset after canceling in [EntreeMenuFragment]
+     * Test that the order is reset after canceling in [MealQuantityFragment]
      */
     @Test
     fun `order_reset_after_cancel_from_entree_menu`() {
@@ -189,7 +189,7 @@ class OrderFunctionalityTests : BaseTest() {
         // Start the order
         onView(withId(R.id.start_order_btn)).perform(click())
         // Select an item
-        onView(withId(R.id.cauliflower)).perform(click())
+        onView(withId(R.id.three_meals)).perform(click())
         // Cancel order
         onView(withId(R.id.cancel_button)).perform(click())
         // Start the order
@@ -199,7 +199,7 @@ class OrderFunctionalityTests : BaseTest() {
     }
 
     /**
-     * Test that the order is reset after canceling in [SideMenuFragment]
+     * Test that the order is reset after canceling in [MealTypeFragment]
      */
     @Test
     fun `order_reset_after_cancel_from_side_menu`() {
@@ -208,7 +208,7 @@ class OrderFunctionalityTests : BaseTest() {
         // Start the order
         onView(withId(R.id.start_order_btn)).perform(click())
         // Select an item
-        onView(withId(R.id.cauliflower)).perform(click())
+        onView(withId(R.id.three_meals)).perform(click())
         // Move to side menu
         onView(withId(R.id.next_button)).perform(click())
         // Select an item
@@ -222,7 +222,7 @@ class OrderFunctionalityTests : BaseTest() {
     }
 
     /**
-     * Test that the order is reset after canceling in [AccompanimentMenuFragment]
+     * Test that the order is reset after canceling in [SubscriptionFragment]
      */
     @Test
     fun `order_reset_after_cancel_from_accompaniment_menu`() {
@@ -231,7 +231,7 @@ class OrderFunctionalityTests : BaseTest() {
         // Start the order
         onView(withId(R.id.start_order_btn)).perform(click())
         // Select an item
-        onView(withId(R.id.cauliflower)).perform(click())
+        onView(withId(R.id.three_meals)).perform(click())
         // Move to side menu
         onView(withId(R.id.next_button)).perform(click())
         // Select an item

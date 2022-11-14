@@ -28,37 +28,37 @@
         tools:layout="@layout/fragment_start_order" >
         <action
             android:id="@+id/action_startOrderFragment_to_entreeMenuFragment"
-            app:destination="@id/entreeMenuFragment" />
+            app:destination="@id/mealQuantityFragment" />
     </fragment>
     <fragment
-        android:id="@+id/entreeMenuFragment"
-        android:name="com.example.lunchtray.ui.order.EntreeMenuFragment"
+        android:id="@+id/mealQuantityFragment"
+        android:name="com.example.lunchtray.ui.order.MealQuantityFragment"
         android:label="@string/title_entree_menu"
-        tools:layout="@layout/fragment_entree_menu" >
+        tools:layout="@layout/fragment_meal_quantity" >
         <action
             android:id="@+id/action_entreeMenuFragment_to_sideMenuFragment"
-            app:destination="@id/sideMenuFragment" />
+            app:destination="@id/mealTypeFragment" />
         <action
             android:id="@+id/action_entreeMenuFragment_to_startOrderFragment"
             app:destination="@id/startOrderFragment" />
     </fragment>
     <fragment
-        android:id="@+id/sideMenuFragment"
-        android:name="com.example.lunchtray.ui.order.SideMenuFragment"
+        android:id="@+id/mealTypeFragment"
+        android:name="com.example.lunchtray.ui.order.MealTypeFragment"
         android:label="@string/title_side_menu"
-        tools:layout="@layout/fragment_side_menu" >
+        tools:layout="@layout/fragment_meal_type" >
         <action
             android:id="@+id/action_sideMenuFragment_to_accompanimentMenuFragment"
-            app:destination="@id/accompanimentMenuFragment" />
+            app:destination="@id/subscriptionFragment" />
         <action
             android:id="@+id/action_sideMenuFragment_to_startOrderFragment"
             app:destination="@id/startOrderFragment" />
     </fragment>
     <fragment
-        android:id="@+id/accompanimentMenuFragment"
-        android:name="com.example.lunchtray.ui.order.AccompanimentMenuFragment"
+        android:id="@+id/subscriptionFragment"
+        android:name="com.example.lunchtray.ui.order.SubscriptionFragment"
         android:label="@string/title_accompaniment_menu"
-        tools:layout="@layout/fragment_accompaniment_menu" >
+        tools:layout="@layout/fragment_subscription" >
         <action
             android:id="@+id/action_accompanimentMenuFragment_to_checkoutFragment"
             app:destination="@id/checkoutFragment" />

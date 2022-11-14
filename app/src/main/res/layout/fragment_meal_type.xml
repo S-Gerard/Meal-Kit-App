@@ -18,23 +18,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.order.EntreeMenuFragment">
-    
+    android:id="@+id/layout_side_menu"
+    tools:context=".ui.order.MealTypeFragment">
+
     <data>
         <variable
             name="viewModel"
             type="com.example.lunchtray.model.OrderViewModel" />
 
-        <!-- TODO: Add the data binding variable for the EntreeMenuFragment -->
+        <!-- TODO: Add the data binding variable for the MealTypeFragment -->
         <variable
-            name="entreeMenuFragment"
-            type="com.example.lunchtray.ui.order.EntreeMenuFragment" />
+            name="mealTypeFragment"
+            type="com.example.lunchtray.ui.order.MealTypeFragment" />
     </data>
-
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -44,34 +44,34 @@
             android:paddingBottom="@dimen/side_margin">
 
             <RadioGroup
-                android:id="@+id/entree_options"
+                android:id="@+id/side_options"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <!-- TODO: set the entree in the view model when the RadioButton is clicked -->
+                <!-- TODO: set the side in the view model when the RadioButton is clicked -->
                 <RadioButton
-                    android:id="@+id/cauliflower"
-                    android:onClick='@{() -> viewModel.setEntree("cauliflower")}'
+                    android:id="@+id/salad"
+                    android:onClick='@{() -> viewModel.setSide("salad")}'
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
-                    android:text='@{viewModel.menuItems["cauliflower"].name}'
-                    tools:text="Entree 1" />
+                    android:text='@{viewModel.menuItems["salad"].name}'
+                    tools:text="Side 1" />
 
                 <TextView
-                    android:id="@+id/cauliflower_description"
+                    android:id="@+id/salad_description"
                     style="@style/Widget.MenuItem.TextView.Info"
-                    android:text='@{viewModel.menuItems["cauliflower"].description}'
-                    tools:text="Entree 1 description" />
+                    android:text='@{viewModel.menuItems["salad"].description}'
+                    tools:text="Side 1 description" />
 
                 <TextView
-                    android:id="@+id/cauliflower_price"
+                    android:id="@+id/salad_price"
                     style="@style/Widget.MenuItem.TextView.Info"
                     android:paddingTop="@dimen/base_margin"
-                    android:text='@{viewModel.menuItems["cauliflower"].getFormattedPrice()}'
+                    android:text='@{viewModel.menuItems["salad"].getFormattedPrice()}'
                     tools:text="$0.00" />
 
                 <View
@@ -80,29 +80,29 @@
                     android:layout_height="1dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cauliflower_description" />
+                    app:layout_constraintTop_toBottomOf="@id/salad_description" />
 
-                <!-- TODO: set the entree in the view model when the RadioButton is clicked -->
+                <!-- TODO: set the side in the view model when the RadioButton is clicked -->
                 <RadioButton
-                    android:id="@+id/chili"
-                    android:onClick='@{() -> viewModel.setEntree("chili")}'
+                    android:id="@+id/soup"
+                    android:onClick='@{() -> viewModel.setSide("soup")}'
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
-                    android:text='@{viewModel.menuItems["chili"].name}'
-                    tools:text="Entree 2" />
+                    android:text='@{viewModel.menuItems["soup"].name}'
+                    tools:text="Side 2" />
 
                 <TextView
-                    android:id="@+id/chili_description"
+                    android:id="@+id/soup_description"
                     style="@style/Widget.MenuItem.TextView.Info"
-                    android:text='@{viewModel.menuItems["chili"].description}'
-                    tools:text="Entree 2 description" />
+                    android:text='@{viewModel.menuItems["soup"].description}'
+                    tools:text="Side 2 description" />
 
                 <TextView
-                    android:id="@+id/chili_price"
+                    android:id="@+id/soup_price"
                     style="@style/Widget.MenuItem.TextView.Info"
                     android:paddingTop="@dimen/base_margin"
-                    android:text='@{viewModel.menuItems["chili"].getFormattedPrice()}'
+                    android:text='@{viewModel.menuItems["soup"].getFormattedPrice()}'
                     tools:text="$0.00" />
 
                 <View
@@ -111,29 +111,30 @@
                     android:layout_height="1dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/chili_description" />
+                    app:layout_constraintTop_toBottomOf="@id/soup_description" />
 
-                <!-- TODO: set the entree in the view model when the RadioButton is clicked -->
+
+                <!-- TODO: set the side in the view model when the RadioButton is clicked -->
                 <RadioButton
-                    android:id="@+id/pasta"
-                    android:onClick='@{() -> viewModel.setEntree("pasta")}'
+                    android:id="@+id/potatoes"
+                    android:onClick='@{() -> viewModel.setSide("potatoes")}'
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
-                    android:text='@{viewModel.menuItems["pasta"].name}'
-                    tools:text="Entree 3" />
+                    android:text='@{viewModel.menuItems["potatoes"].name}'
+                    tools:text="Side 3" />
 
                 <TextView
-                    android:id="@+id/pasta_description"
+                    android:id="@+id/potato_description"
                     style="@style/Widget.MenuItem.TextView.Info"
-                    android:text='@{viewModel.menuItems["pasta"].description}'
-                    tools:text="Entree 3 description" />
+                    android:text='@{viewModel.menuItems["potatoes"].description}'
+                    tools:text="Side 3 description" />
 
                 <TextView
-                    android:id="@+id/pasta_price"
+                    android:id="@+id/potato_price"
                     style="@style/Widget.MenuItem.TextView.Info"
                     android:paddingTop="@dimen/base_margin"
-                    android:text='@{viewModel.menuItems["pasta"].getFormattedPrice()}'
+                    android:text='@{viewModel.menuItems["potatoes"].getFormattedPrice()}'
                     tools:text="$0.00" />
 
                 <View
@@ -142,29 +143,29 @@
                     android:layout_height="1dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/pasta_description" />
+                    app:layout_constraintTop_toBottomOf="@id/potato_description" />
 
-                <!-- TODO: set the entree in the view model when the RadioButton is clicked -->
+                <!-- TODO: set the side in the view model when the RadioButton is clicked -->
                 <RadioButton
-                    android:id="@+id/skillet"
-                    android:onClick='@{() -> viewModel.setEntree("skillet")}'
+                    android:id="@+id/rice"
+                    android:onClick='@{() -> viewModel.setSide("rice")}'
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
-                    android:text='@{viewModel.menuItems["skillet"].name}'
-                    tools:text="Entree 4" />
+                    android:text='@{viewModel.menuItems["rice"].name}'
+                    tools:text="Side 4" />
 
                 <TextView
-                    android:id="@+id/skillet_description"
+                    android:id="@+id/rice_description"
                     style="@style/Widget.MenuItem.TextView.Info"
-                    android:text='@{viewModel.menuItems["skillet"].description}'
-                    tools:text="Entree 4 description" />
+                    android:text='@{viewModel.menuItems["rice"].description}'
+                    tools:text="Side 4 description" />
 
                 <TextView
-                    android:id="@+id/skillet_price"
+                    android:id="@+id/rice_price"
                     style="@style/Widget.MenuItem.TextView.Info"
                     android:paddingTop="@dimen/base_margin"
-                    android:text='@{viewModel.menuItems["skillet"].getFormattedPrice()}'
+                    android:text='@{viewModel.menuItems["rice"].getFormattedPrice()}'
                     tools:text="$0.00" />
 
             </RadioGroup>
@@ -177,7 +178,7 @@
                 android:layout_marginTop="@dimen/base_margin"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/entree_options" />
+                app:layout_constraintTop_toBottomOf="@id/side_options" />
 
             <!-- TODO: set the text to the current subtotal value from the view model -->
             <TextView
@@ -191,7 +192,7 @@
             <!-- TODO: cancel the order when clicked -->
             <Button
                 android:id="@+id/cancel_button"
-                android:onClick="@{() -> entreeMenuFragment.cancelOrder()}"
+                android:onClick="@{() -> mealTypeFragment.cancelOrder()}"
                 style="@style/Widget.Order.Button.Cancel"
                 app:layout_constraintEnd_toStartOf="@id/next_button"
                 app:layout_constraintStart_toStartOf="parent"
@@ -200,7 +201,7 @@
             <!-- TODO: go to the next screen when clicked -->
             <Button
                 android:id="@+id/next_button"
-                android:onClick="@{() -> entreeMenuFragment.goToNextScreen()}"
+                android:onClick="@{() -> mealTypeFragment.goToNextScreen()}"
                 style="@style/Widget.Order.Button.Next"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -37,7 +37,7 @@ import org.junit.runner.RunWith
 class NavigationTests : BaseTest() {
 
     /**
-     * Test navigation from [StartOrderFragment] to [EntreeMenuFragment]
+     * Test navigation from [StartOrderFragment] to [MealQuantityFragment]
      */
     @Test
     fun `navigate_to_entree_menu_from_start_order`() {
@@ -59,7 +59,7 @@ class NavigationTests : BaseTest() {
     }
 
     /**
-     * Test navigation from [EntreeMenuFragment] to [StartOrderFragment]
+     * Test navigation from [MealQuantityFragment] to [StartOrderFragment]
      */
     @Test
     fun `navigate_to_start_order_from_entree_menu`() {
@@ -68,7 +68,7 @@ class NavigationTests : BaseTest() {
             ApplicationProvider.getApplicationContext())
         // Launch EntreeMenuFragment
         val entreeMenuScenario =
-            launchFragmentInContainer<EntreeMenuFragment>(themeResId = R.style.Theme_LunchTray)
+            launchFragmentInContainer<MealQuantityFragment>(themeResId = R.style.Theme_LunchTray)
         // Configure nav controller
         entreeMenuScenario.onFragment{ fragment ->
             navController.setGraph(R.navigation.mobile_navigation)
@@ -84,7 +84,7 @@ class NavigationTests : BaseTest() {
     }
 
     /**
-     * Test navigation from [EntreeMenuFragment] to [SideMenuFragment]
+     * Test navigation from [MealQuantityFragment] to [MealTypeFragment]
      */
     @Test
     fun `navigate_to_side_menu_from_entree_menu`() {
@@ -93,7 +93,7 @@ class NavigationTests : BaseTest() {
             ApplicationProvider.getApplicationContext())
         // Launch the EntreeMenuFragment
         val entreeMenuScenario =
-            launchFragmentInContainer<EntreeMenuFragment>(themeResId = R.style.Theme_LunchTray)
+            launchFragmentInContainer<MealQuantityFragment>(themeResId = R.style.Theme_LunchTray)
         // Configure nav controller
         entreeMenuScenario.onFragment{ fragment ->
             navController.setGraph(R.navigation.mobile_navigation)
@@ -109,14 +109,14 @@ class NavigationTests : BaseTest() {
     }
 
     /**
-     * Test navigation from [SideMenuFragment] to [StartOrderFragment]
+     * Test navigation from [MealTypeFragment] to [StartOrderFragment]
      */
     @Test
     fun `navigate_to_start_order_from_side_menu`() {
         val navController = TestNavHostController(
             ApplicationProvider.getApplicationContext())
         val sideMenuScenario =
-            launchFragmentInContainer<SideMenuFragment>(themeResId = R.style.Theme_LunchTray)
+            launchFragmentInContainer<MealTypeFragment>(themeResId = R.style.Theme_LunchTray)
         sideMenuScenario.onFragment{ fragment ->
             navController.setGraph(R.navigation.mobile_navigation)
             navController.setCurrentDestination(destId = R.id.sideMenuFragment)
@@ -127,14 +127,14 @@ class NavigationTests : BaseTest() {
     }
 
     /**
-     * Test navigation from [SideMenuFragment] to [AccompanimentMenuFragment]
+     * Test navigation from [MealTypeFragment] to [SubscriptionFragment]
      */
     @Test
     fun `navigate_to_accompaniment_menu_from_side_menu`() {
         val navController = TestNavHostController(
             ApplicationProvider.getApplicationContext())
         val sideMenuScenario =
-            launchFragmentInContainer<SideMenuFragment>(themeResId = R.style.Theme_LunchTray)
+            launchFragmentInContainer<MealTypeFragment>(themeResId = R.style.Theme_LunchTray)
         sideMenuScenario.onFragment{ fragment ->
             navController.setGraph(R.navigation.mobile_navigation)
             navController.setCurrentDestination(destId = R.id.sideMenuFragment)
@@ -145,14 +145,14 @@ class NavigationTests : BaseTest() {
     }
 
     /**
-     * Test navigation from [AccompanimentMenuFragment] to [StartOrderFragment]
+     * Test navigation from [SubscriptionFragment] to [StartOrderFragment]
      */
     @Test
     fun `navigate_to_start_order_from_accompaniment_menu`() {
         val navController = TestNavHostController(
             ApplicationProvider.getApplicationContext())
         val accompanimentMenuScenario =
-            launchFragmentInContainer<AccompanimentMenuFragment>(
+            launchFragmentInContainer<SubscriptionFragment>(
                 themeResId = R.style.Theme_LunchTray)
         accompanimentMenuScenario.onFragment{ fragment ->
             navController.setGraph(R.navigation.mobile_navigation)
@@ -164,14 +164,14 @@ class NavigationTests : BaseTest() {
     }
 
     /**
-     * Test navigation from [AccompanimentMenuFragment] to [CheckoutFragment]
+     * Test navigation from [SubscriptionFragment] to [CheckoutFragment]
      */
     @Test
     fun `navigate_to_checkout_from_accompaniment_menu`() {
         val navController = TestNavHostController(
             ApplicationProvider.getApplicationContext())
         val accompanimentMenuScenario =
-            launchFragmentInContainer<AccompanimentMenuFragment>(
+            launchFragmentInContainer<SubscriptionFragment>(
                 themeResId = R.style.Theme_LunchTray)
         accompanimentMenuScenario.onFragment{ fragment ->
             navController.setGraph(R.navigation.mobile_navigation)

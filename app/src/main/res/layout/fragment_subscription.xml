@@ -19,17 +19,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layout_accompaniment_menu"
-    tools:context=".ui.order.AccompanimentMenuFragment">
+    tools:context=".ui.order.SubscriptionFragment">
 
     <data>
         <variable
             name="viewModel"
             type="com.example.lunchtray.model.OrderViewModel" />
 
-        <!-- TODO: Add the data binding variable for the AccompanimentMenuFragment -->
+        <!-- TODO: Add the data binding variable for the SubscriptionFragment -->
         <variable
-            name="accompanimentMenuFragment"
-            type="com.example.lunchtray.ui.order.AccompanimentMenuFragment" />
+            name="subscriptionFragment"
+            type="com.example.lunchtray.ui.order.SubscriptionFragment" />
     </data>
 
 
@@ -162,7 +162,7 @@
             <!-- TODO: cancel the order when clicked -->
             <Button
                 android:id="@+id/cancel_button"
-                android:onClick="@{() -> accompanimentMenuFragment.cancelOrder()}"
+                android:onClick="@{() -> subscriptionFragment.cancelOrder()}"
                 style="@style/Widget.Order.Button.Cancel"
                 app:layout_constraintEnd_toStartOf="@id/next_button"
                 app:layout_constraintStart_toStartOf="parent"
@@ -171,7 +171,7 @@
             <!-- TODO: go to the next screen when clicked -->
             <Button
                 android:id="@+id/next_button"
-                android:onClick="@{() -> accompanimentMenuFragment.goToNextScreen()}"
+                android:onClick="@{() -> subscriptionFragment.goToNextScreen()}"
                 style="@style/Widget.Order.Button.Next"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

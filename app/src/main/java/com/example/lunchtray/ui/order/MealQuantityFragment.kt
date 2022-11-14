@@ -23,18 +23,18 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.lunchtray.R
-import com.example.lunchtray.databinding.FragmentSideMenuBinding
+import com.example.lunchtray.databinding.FragmentEntreeMenuBinding
 import com.example.lunchtray.model.OrderViewModel
 
 /**
- * [SideMenuFragment] allows people to add a side to the order or cancel the order.
+ * [MealQuantityFragment] allows people to add an entree to the order or cancel the order.
  */
-class SideMenuFragment : Fragment() {
+class MealQuantityFragment : Fragment() {
 
     // Binding object instance corresponding to the fragment_start_order.xml layout
     // This property is non-null between the onCreateView() and onDestroyView() lifecycle callbacks,
     // when the view hierarchy is attached to the fragment.
-    private var _binding: FragmentSideMenuBinding? = null
+    private var _binding: FragmentEntreeMenuBinding? = null
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -49,8 +49,8 @@ class SideMenuFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSideMenuBinding.inflate(inflater, container, false)
-        val root = binding.root
+        _binding = FragmentEntreeMenuBinding.inflate(inflater, container, false)
+        val root: View = binding.root
         return root
     }
 
@@ -60,15 +60,15 @@ class SideMenuFragment : Fragment() {
         binding?.apply {
             lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
-            sideMenuFragment = this@SideMenuFragment
+            entreeMenuFragment = this@MealQuantityFragment
         }
     }
 
     /**
-     * Navigate to the accompaniments menu fragment
+     * Navigate to the side menu fragment.
      */
     fun goToNextScreen() {
-        findNavController().navigate(R.id.action_sideMenuFragment_to_accompanimentMenuFragment)
+        findNavController().navigate(R.id.action_entreeMenuFragment_to_sideMenuFragment)
     }
 
     /**
@@ -76,7 +76,7 @@ class SideMenuFragment : Fragment() {
      */
     fun cancelOrder() {
         sharedViewModel.resetOrder()
-        findNavController().navigate(R.id.action_sideMenuFragment_to_startOrderFragment)
+        findNavController().navigate(R.id.action_entreeMenuFragment_to_startOrderFragment)
     }
 
     /**

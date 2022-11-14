@@ -23,19 +23,19 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.lunchtray.R
-import com.example.lunchtray.databinding.FragmentAccompanimentMenuBinding
+import com.example.lunchtray.databinding.FragmentSubscriptionBinding
 import com.example.lunchtray.model.OrderViewModel
 
 /**
- * [AccompanimentMenuFragment] allows people to add an accompaniment to their order or cancel the
+ * [SubscriptionFragment] allows people to add an accompaniment to their order or cancel the
  * order.
  */
-class AccompanimentMenuFragment : Fragment() {
+class SubscriptionFragment : Fragment() {
 
     // Binding object instance corresponding to the fragment_start_order.xml layout
     // This property is non-null between the onCreateView() and onDestroyView() lifecycle callbacks,
     // when the view hierarchy is attached to the fragment.
-    private var _binding: FragmentAccompanimentMenuBinding? = null
+    private var _binding: FragmentSubscriptionBinding? = null
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -50,7 +50,7 @@ class AccompanimentMenuFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentAccompanimentMenuBinding.inflate(inflater, container, false)
+        _binding = FragmentSubscriptionBinding.inflate(inflater, container, false)
         val root = binding.root
         return root
     }
@@ -61,7 +61,7 @@ class AccompanimentMenuFragment : Fragment() {
         binding?.apply {
             lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
-            accompanimentMenuFragment = this@AccompanimentMenuFragment
+            subscriptionFragment = this@SubscriptionFragment
         }
     }
 
