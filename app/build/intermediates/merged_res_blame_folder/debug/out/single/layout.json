@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "C:\\Users\\sheag\\.gradle\\daemon\\7.4.2\\com.example.lunchtray.app-mergeDebugResources-46:\\layout\\fragment_checkout.xml",
+        "source": "C:\\Users\\sheag\\.gradle\\daemon\\7.4.2\\com.example.lunchtray.app-main-49:\\layout\\fragment_checkout.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheag\\.gradle\\daemon\\7.4.2\\com.example.lunchtray.app-mergeDebugResources-46:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\sheag\\.gradle\\daemon\\7.4.2\\com.example.lunchtray.app-main-49:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheag\\.gradle\\daemon\\7.4.2\\com.example.lunchtray.app-mergeDebugResources-46:\\layout\\fragment_meal_quantity.xml",
+        "source": "C:\\Users\\sheag\\.gradle\\daemon\\7.4.2\\com.example.lunchtray.app-main-49:\\layout\\fragment_meal_quantity.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheag\\.gradle\\daemon\\7.4.2\\com.example.lunchtray.app-mergeDebugResources-46:\\layout\\fragment_meal_type.xml",
+        "source": "C:\\Users\\sheag\\.gradle\\daemon\\7.4.2\\com.example.lunchtray.app-main-49:\\layout\\fragment_meal_type.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheag\\.gradle\\daemon\\7.4.2\\com.example.lunchtray.app-mergeDebugResources-46:\\layout\\fragment_start_order.xml",
+        "source": "C:\\Users\\sheag\\.gradle\\daemon\\7.4.2\\com.example.lunchtray.app-main-49:\\layout\\fragment_start_order.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheag\\.gradle\\daemon\\7.4.2\\com.example.lunchtray.app-mergeDebugResources-46:\\layout\\fragment_subscription.xml",
+        "source": "C:\\Users\\sheag\\.gradle\\daemon\\7.4.2\\com.example.lunchtray.app-main-49:\\layout\\fragment_subscription.xml"
+    },
+    {
+        "merged": "com.example.lunchtray.app-mergeDebugResources-46:/layout/fragment_start_order.xml",
+        "source": "com.example.lunchtray.app-main-49:/layout/fragment_start_order.xml"
+    }
+]

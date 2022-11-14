@@ -115,7 +115,7 @@
                     android:id="@+id/five_meals_price"
                     style="@style/Widget.MenuItem.TextView.Info"
                     android:paddingTop="@dimen/base_margin"
-                    android:text="$32.5"
+                    android:text="$32.50"
                     tools:text="$0.00" />
 
                 <View

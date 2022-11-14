@@ -65,9 +65,6 @@ class SubscriptionFragment : Fragment() {
         }
     }
 
-    /**
-     * Navigate to the checkout fragment.
-     */
     fun goToNextScreen() {
         findNavController().navigate(R.id.action_accompanimentMenuFragment_to_checkoutFragment)
     }

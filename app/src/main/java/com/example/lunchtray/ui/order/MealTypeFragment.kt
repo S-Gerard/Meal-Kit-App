@@ -64,9 +64,6 @@ class MealTypeFragment : Fragment() {
         }
     }
 
-    /**
-     * Navigate to the accompaniments menu fragment
-     */
     fun goToNextScreen() {
         findNavController().navigate(R.id.action_sideMenuFragment_to_accompanimentMenuFragment)
     }

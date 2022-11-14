@@ -23,15 +23,15 @@ import java.text.NumberFormat
 
 class OrderViewModel : ViewModel() {
     
-    // Entree for the order
+    // Number of meals
     private val _quantity = MutableLiveData<Int?>()
     val quantity: LiveData<Int?> = _quantity
 
-    // Side for the order
+    // Type of meal
     private val _type = MutableLiveData<String?>()
     val type: LiveData<String?> = _type
 
-    // Accompaniment for the order.
+    // Subscription duration
     private val _subscription = MutableLiveData<Int?>()
     val subscription: LiveData<Int?> = _subscription
 
@@ -43,7 +43,7 @@ class OrderViewModel : ViewModel() {
     }
 
     /**
-     * Set the entree for the order.
+     * Set the meal quantity for the order.
      */
     fun setQuantity(numberMeals: Int) {
         _quantity.value = numberMeals
@@ -51,14 +51,14 @@ class OrderViewModel : ViewModel() {
     }
 
     /**
-     * Set the side for the order.
+     * Set the meal type for the order.
      */
     fun setType(mealType: String) {
         _type.value = mealType
     }
 
     /**
-     * Set the accompaniment for the order.
+     * Set the subscription duration for the order.
      */
     fun setSubscription(subscription: Int) {
         _subscription.value = subscription
@@ -66,7 +66,7 @@ class OrderViewModel : ViewModel() {
     }
 
     /**
-     * Update subtotal value.
+     * Update total value.
      */
     private fun updateTotal() {
         _total.value = ((quantity.value ?: 0) * 6.50) * (subscription.value ?: 1)
@@ -77,7 +77,6 @@ class OrderViewModel : ViewModel() {
      * Reset all values pertaining to the order.
      */
     fun resetOrder() {
-        // TODO: Reset all values associated with an order
         _quantity.value = null
         _total.value = 0.0
         _type.value = null
